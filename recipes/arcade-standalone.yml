@@ -1,0 +1,39 @@
+version: '2'
+services:
+  arcadeanalytics-single:
+    image: arcadeanalytics/arcadeanalytics:1.0.1
+    user: ${CURRENT_UID}
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod-single
+      - SPRING_EMAIL_HOST=smtp.gmail.com
+      - SPRING_EMAIL_PORT=587
+      - SPRING_EMAIL_USERNAME=
+      - SPRING_EMAIL_PASSWORD=
+      - JHIPSTER_MAIL_FROM=
+      - JHIPSTER_MAIL_BASE-URL=
+      - APPLICATION_PATH=/arcade
+      - APPLICATION_STORAGE_PATH=/arcade/storage
+      - APPLICATION_MEDIAPATH=/content/media/
+      - APPLICATION_CONNECTORSPATH=/arcade-connectors
+      - JAVA_OPTS=-DSSH_PRIV_KEY=/arcade/.ssh/id_rsa -DSSH_PUB_KEY=/arcade/.ssh/id_rsa.pub
+    ports:
+      - 8080:8080
+    volumes:
+      - ~/.arcade-single/:/arcade/
+# uncomment to startup demo database(s)
+#  arcadeanalytics-orientdb:
+#    extends:
+#      file: orientdb2.yml
+#      service: arcadeanalytics-orientdb
+#  arcadeanalytics-orientdb3:
+#    extends:
+#      file: orientdb3.yml
+#      service: arcadeanalytics-orientdb3
+#  arcadeanalytics-postgresql-dvd-rental:
+#    extends:
+#      file: postgresql-dvd-rental.yml
+#      service: arcadeanalytics-postgresql-dvd-rental
+#  arcadeanalytics-mysql-sakila:
+#    extends:
+#      file: mysql-sakila.yml
+#      service: arcadeanalytics-mysql-sakila

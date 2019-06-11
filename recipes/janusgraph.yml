@@ -1,0 +1,6 @@
+version: '2'
+services:
+  arcadeanalytics-janusgraph:
+    image: arcadeanalytics/janusgraph
+    ports:
+      - 8182:8182
