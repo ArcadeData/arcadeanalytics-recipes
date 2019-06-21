@@ -1,7 +1,7 @@
 version: '2'
 services:
   arcadeanalytics-orientdb2:
-    image: arcadeanalytics/orientdb:2.2.36
+    image: arcadeanalytics/orientdb:2.2.37
     environment:
       ORIENTDB_ROOT_PASSWORD: arcade
     ports:
