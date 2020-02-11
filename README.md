@@ -22,32 +22,32 @@ Open a shell/cmd and type:
 
 The command above starts Arcade, you can top the container with a *ctrl+c* on the command line. To run Arcade in background, use the _-d_ switch:
 
-    docker-compose -f recipes/arcade-standalone.yml up -d 
-     
+    docker-compose -f recipes/arcade-standalone.yml up -d
+
 Point your browser to
-    
+
     http://localhost:8080/
-    
+
 login as _user_ with password _user_
 
-*NOTE*: This compose does not containers with test databases, they are commented and not started. 
+*NOTE*: This compose does not containers with test databases, they are commented and not started.
 
 ### Create more users
 
 To be able to create new users, stop Arcade with _ctrl+c_ on the command line or, if the _-d_ flag was used, type the command:
 
-    docker-compose -f recipes/arcade-standalone.yml down 
+    docker-compose -f recipes/arcade-standalone.yml down
 
 Open the compose definition *recipes/arcade-standalone.yml* with an editor of your choice and fill the properties inside the compose:
 
-          - SPRING_EMAIL_HOST=smtp.gmail.com 
+          - SPRING_EMAIL_HOST=smtp.gmail.com
           - SPRING_EMAIL_PORT=587
           - SPRING_EMAIL_USERNAME=
           - SPRING_EMAIL_PASSWORD=
           - JHIPSTER_MAIL_FROM=
           - JHIPSTER_MAIL_BASE-URL=
 
-Then restart the container and login with admin/admin credentials. 
+Then restart the container and login with admin/admin credentials.
 In the _admin_ menu you are now able to create new users.
 
 ## OrientDB 3.0.x: explore the demo database
@@ -66,7 +66,24 @@ Now, to connect and use the database, go to Arcade, create a new data source wit
 * password: admin
 
 Save and start the index process of the data source.
- 
+
+## OrientDB 3.0.x: explore the demo database with Gremlin
+
+To play with the Janus's demo database, open a new shell and start the container:
+
+    docker-compose -f recipes/janus.yml up
+
+Now, to connect and use the database, go to Arcade, create a new data source with these parameters:
+
+* type: Gremlin
+* gremlin implementation: JanusGraph
+* server: arcadeanalytics-janusgraph
+* port: 8182
+* database: na
+* username: na
+* password: na
+
+Save and start the index process of the data source.
 
 ## OrientDB 3.0.x: explore the demo database with Gremlin
 
@@ -114,8 +131,3 @@ Now, to connect and use the database, go to Arcade, create a new data source wit
 * database: sakila
 * username: test
 * password: test
-
-
-
-
-
