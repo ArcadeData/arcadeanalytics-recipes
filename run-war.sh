@@ -9,14 +9,14 @@ maven_base_url=https://repo1.maven.org/maven2/com/arcadeanalytics
 
 arcade_path=./arcade-single-war
 
-arcade_ver=1.0.5
+arcade_ver=1.0.7
 #prod will use postgres and elastic standalone
 arcade_profiles=prod
 #prod will h2db and elastic embedded
 #arcade_profiles=prod-single
 
 connectors_path=$arcade_path/arcade-connectors
-connectors_ver=1.0.10
+connectors_ver=1.0.12
 connectors="arcade-connectors-neo4j3|arcade-connectors-orientdb3|arcade-connectors-gremlin|arcade-connectors-rdbms"
 
 if [ ! -d  $connectors_path ]; then
