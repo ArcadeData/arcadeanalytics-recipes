@@ -67,7 +67,7 @@ Now, to connect and use the database, go to Arcade, create a new data source wit
 
 Save and start the index process of the data source.
 
-## OrientDB 3.0.x: explore the demo database with Gremlin
+## JanusGraph: explore the demo database with Gremlin
 
 To play with the Janus's demo database, open a new shell and start the container:
 
